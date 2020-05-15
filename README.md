@@ -11,4 +11,5 @@ Modo de uso:
 <h2>Authors</h2>
 <h4>Original Author and Development Lead</h4>
 <h5>Carlos Monge Molina</h5>
+<h5>Jossy Mejia</h5>
 <h5>Rolando</h5>
