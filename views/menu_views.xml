@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_consolidated_cargo" name="Consolidado de carga" parent="stock.menu_warehouse_report" sequence="8" action="action_stock_quantity_history"/>
+    </data>
+</odoo>
