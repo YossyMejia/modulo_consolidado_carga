@@ -14,7 +14,8 @@
     'depends': ['stock','procodi'],
     'data': [
         'views/consolidated_cargo_view.xml',
-        'views/menu_views.xml'
+        'views/menu_views.xml',
+        'views/report.xml'
     ],
     'installable': True,
 }

@@ -6,12 +6,12 @@
         <field name="arch" type="xml">
                 <form><group>
                     <group>
-                        <field name="compute_at_date" widget="radio"/>
-                        <field name="date" attrs="{'invisible': [('compute_at_date', '=', 0)]}"/>
+                        <field name="rutas"/>
+                        <field name="fecha"/>
                     </group>
                 </group>
                 <footer>
-                    <button name="open_table" string="Imprimir consolidado" type="object" class="btn-primary"/>
+                    <button name="report_custom" string="Imprimir consolidado" type="object" class="btn-primary"/>
                     <button string="Cancelar" class="btn-secondary" special="cancel" />
                 </footer>
         </form></field>
@@ -25,4 +25,5 @@
         <field name="target">new</field>
         <field name="context">{'default_compute_at_date': 0}</field>
     </record>
+    
 </odoo>
