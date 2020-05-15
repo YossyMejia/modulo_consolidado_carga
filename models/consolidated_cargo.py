@@ -7,11 +7,13 @@ from odoo import api, fields, models, _
 class ConsolidatedCargo(models.TransientModel):
     _name = 'consolidated.cargo'
     _description = 'Stock Quantity History'
+    _inherit = ['transport.routes']
+
 
     compute_at_date = fields.Selection([
-        (0, 'Current Inventory'),
+        (0, 'Ruta'),
         (1, 'At a Specific Date')
-    ], string="Compute", help="Choose to analyze the current inventory or from a specific date in the past.")
+    ], string="Rutas", help="Choose to analyze the current inventory or from a specific date in the past.")
     date = fields.Datetime('Inventory at Date', help="Choose a date to get the inventory at that date", default=fields.Datetime.now)
 
     def open_table(self):

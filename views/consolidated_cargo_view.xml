@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_stock_quantity_history_inherit" model="ir.ui.view">
+    <record id="view_consolidated_cargo" model="ir.ui.view">
         <field name="name">Consolidado de Carga</field>
         <field name="model">consolidated.cargo</field>
         <field name="arch" type="xml">
-            <footer>
-                <button name="open_table" string="Crear consolidado" type="object" class="btn-primary"/>
-                <button string="Cancel" class="btn-secondary" special="cancel" />
-            </footer>
-        </field>
+                <form><group>
+                    <group>
+                        <field name="compute_at_date" widget="radio"/>
+                        <field name="date" attrs="{'invisible': [('compute_at_date', '=', 0)]}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="open_table" string="Imprimir consolidado" type="object" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel" />
+                </footer>
+        </form></field>
     </record>
-
-    <data>
-        <record id="action_stock_quantity_history" model="ir.actions.act_window">
-            <field name="name">Consolidado de carga</field>
-            <field name="res_model">consolidated.cargo</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_stock_quantity_history_inherit"/>
-            <field name="target">new</field>
-            <field name="context">{'default_compute_at_date': 0}</field>
-        </record>
-    </data>
+    <record id="action_consolidated_cargo" model="ir.actions.act_window">
+        <field name="name">Consolidado de Carga</field>
+        <field name="res_model">consolidated.cargo</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_consolidated_cargo"/>
+        <field name="target">new</field>
+        <field name="context">{'default_compute_at_date': 0}</field>
+    </record>
 </odoo>
-
